@@ -25,9 +25,11 @@ describe('Funcionalidade: Visualizar perfil' , () => {
             .should('have.text', 'Roberto dos Santos Filho');
     });
 
+    /*
     it('Deve validar algum item da lista com sucesso', () => {
         cy.get('[data-test="profile-name"]')
             .eq(3)
             .should('have.text', 'Wedney Santos Silva');
     });
+    */
 });
