@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import cadastroPage from "../../support/pages/cadastro.page";
 
 describe('Funcionalidade: Cadastro', () => {
     it('Cadastro com sucesso', () => {
@@ -16,16 +17,13 @@ describe('Funcionalidade: Cadastro', () => {
         cy.get('.large').should('contain', 'Dashboard');
         cy.contains('Bem-vindo').should('exist');
     });    
+
+    it.only('Deve realizar o cadastro com sucesso - Usando o Pages', () => {
+        cy.visit('https://conexaoqa.herokuapp.com/cadastrar');
+
+        cadastroPage.cadastro('Lorenz, Rafael', 'teste@rafael.com.br', 'lorenz@123', 'lorenz@123');
+
+        cy.get('.large').should('contain', 'Dashboard');
+        cy.contains('Bem-vindo').should('exist');
+    });
 });
-
-/*
-Funcionalidade: Cadastro
-
-Cenário: Cadastro com sucesso
-Dado (prérequisito): Que eu esteja na tela de cadastro
-Quando (ações): Eu preencher os campos obrigatórios
-Então (resultado esperado, comportamento, objetivo):  Deve ser cadastrado com sucesso e direcionar para o dashboard
-
-Cenário: Cadastro com pessoa jurídica
-Cenário: Cadastro com e-mail inválido
-*/

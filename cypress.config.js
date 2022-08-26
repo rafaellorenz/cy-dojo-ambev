@@ -1,6 +1,8 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: "ixpgsw",
+  video : false,
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
@@ -8,3 +10,4 @@ module.exports = defineConfig({
     baseUrl: 'https://conexaoqa.herokuapp.com'
   },
 });
+

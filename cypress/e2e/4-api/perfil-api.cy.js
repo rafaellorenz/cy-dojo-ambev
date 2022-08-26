@@ -30,9 +30,7 @@ describe('Funcionalidade de perfil via API', () => {
         });
     });
     */
-   
-    i.only('Deve consultar o perfil do usuário usando token dinâmico', () => {
-
+    it.only('Deve consultar o perfil do usuário usando token dinâmico', () => {
         cy.request({
             method: 'POST',
             url: 'https://conexaoqa.herokuapp.com/api/auth',
